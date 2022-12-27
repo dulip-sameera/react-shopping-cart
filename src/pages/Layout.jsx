@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 import { BG } from "../data/imgs";
 
 const Layout = () => {
@@ -8,10 +9,10 @@ const Layout = () => {
       style={{
         backgroundImage: `url(${BG})`,
       }}
-      className="min-h-screen bg-cover bg-center"
+      className="min-h-screen bg-auto bg-center bg-no-repeat"
     >
-      <div className="bg-customBlack min-h-screen opacity-90">
-        <div>Head</div>
+      <div className="bg-customBlack min-h-screen bg-opacity-90">
+        <Header />
         <Outlet />
       </div>
     </div>
