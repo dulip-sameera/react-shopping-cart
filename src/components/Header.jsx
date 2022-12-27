@@ -16,7 +16,7 @@ const Header = () => {
     <header className="container mx-auto p-4 flex justify-between items-center ">
       <div>
         <Link
-          className="text-customCyan text-3xl hover:text-customDarkCyan"
+          className="text-customCyan text-3xl hover:text-customDarkCyan font-bold"
           to={"/"}
         >
           Bike Shop
