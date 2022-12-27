@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <section className="container mx-auto p-4 flex flex-col justify-center items-center h-[90vh] text-customCyan">
       <h1
-        className="text-4xl font-bold mb-10 md:text-9xl"
+        className="text-4xl font-bold mb-10 md:text-9xl hover:cursor-default"
         style={{
           fontFamily: "Hanuman serif",
         }}
