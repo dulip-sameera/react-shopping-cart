@@ -8,9 +8,12 @@ const Layout = () => {
       style={{
         backgroundImage: `url(${BG})`,
       }}
+      className="min-h-screen bg-cover bg-center"
     >
-      <div>Head</div>
-      <Outlet />
+      <div className="bg-customBlack min-h-screen opacity-90">
+        <div>Head</div>
+        <Outlet />
+      </div>
     </div>
   );
 };
