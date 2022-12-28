@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { BG } from "../data/imgs";
 import { itemList } from "../data/store_itesm";
 import { addBgImage, resetBg } from "../store/features/bgImage.slice";
 import { addToCart, removeFromCart } from "../store/features/cart.slice";
@@ -9,8 +10,36 @@ const ItemPage = () => {
   const { itemId } = useParams();
   const item = itemList.find((item) => item.id === itemId);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(
+      addBgImage({
+        bgImg: item ? item.imgBgURL : BG,
+      })
+    );
+
+    return () => dispatch(resetBg());
+  }, [dispatch, item]);
 
   const cartList = useSelector((state) => state.cart.items);
+
+  // display if the item didn't exists
+  if (!item) {
+    return (
+      <section className="container mx-auto p-4 text-customCyan flex  items-center flex-col justify-center h-[80vh]">
+        <h1 className="text-5xl font-bold">Sorry!</h1>
+        <h2 className="text-4xl my-4">404: PAGE NOT FOUND</h2>
+        <button
+          onClick={() => navigate(-1)}
+          className="p-4 bg-customDarkGrey rounded-lg border-2 border-customDarkCyan"
+        >
+          Go Back
+        </button>
+      </section>
+    );
+  }
+
   const doesTheItemExistsInTheCart = cartList.find(
     (item) => item.id === itemId
   );
@@ -36,16 +65,6 @@ const ItemPage = () => {
       })
     );
   };
-
-  useEffect(() => {
-    dispatch(
-      addBgImage({
-        bgImg: item.imgBgURL,
-      })
-    );
-
-    return () => dispatch(resetBg());
-  }, [dispatch, item.imgBgURL]);
 
   return (
     <section className="container mx-auto p-4 text-customCyan flex  items-center justify-center h-[80vh]">
