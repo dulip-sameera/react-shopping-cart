@@ -21,7 +21,7 @@ export const itemList = [
       "Mauris ullamcorper nostrud nostra exercitation elementum? Labore praesent turpis sint optio doloremque? Tincidunt debitis, consequat, incididunt suscipit officia, anim deserunt, maecenas sit leo aute? Auctor.",
     imgURL: img1,
     imgBgURL: img1BG,
-    price: "12000",
+    price: 12000,
   },
   {
     id: "2",
@@ -30,7 +30,7 @@ export const itemList = [
       "Mauris ullamcorper nostrud nostra exercitation elementum? Labore praesent turpis sint optio doloremque? Tincidunt debitis, consequat, incididunt suscipit officia, anim deserunt, maecenas sit leo aute? Auctor.",
     imgURL: img2,
     imgBgURL: img2BG,
-    price: "10000",
+    price: 10000,
   },
   {
     id: "3",
@@ -39,7 +39,7 @@ export const itemList = [
       "Mauris ullamcorper nostrud nostra exercitation elementum? Labore praesent turpis sint optio doloremque? Tincidunt debitis, consequat, incididunt suscipit officia, anim deserunt, maecenas sit leo aute? Auctor.",
     imgURL: img3,
     imgBgURL: img3BG,
-    price: "12000",
+    price: 12000,
   },
   {
     id: "4",
@@ -48,7 +48,7 @@ export const itemList = [
       "Mauris ullamcorper nostrud nostra exercitation elementum? Labore praesent turpis sint optio doloremque? Tincidunt debitis, consequat, incididunt suscipit officia, anim deserunt, maecenas sit leo aute? Auctor.",
     imgURL: img4,
     imgBgURL: img4BG,
-    price: "16000",
+    price: 16000,
   },
   {
     id: "5",
@@ -57,7 +57,7 @@ export const itemList = [
       "Mauris ullamcorper nostrud nostra exercitation elementum? Labore praesent turpis sint optio doloremque? Tincidunt debitis, consequat, incididunt suscipit officia, anim deserunt, maecenas sit leo aute? Auctor.",
     imgURL: img5,
     imgBgURL: img5BG,
-    price: "11000",
+    price: 11000,
   },
   {
     id: "6",
@@ -66,6 +66,6 @@ export const itemList = [
       "Mauris ullamcorper nostrud nostra exercitation elementum? Labore praesent turpis sint optio doloremque? Tincidunt debitis, consequat, incididunt suscipit officia, anim deserunt, maecenas sit leo aute? Auctor.",
     imgURL: img6,
     imgBgURL: img6BG,
-    price: "15000",
+    price: 15000,
   },
 ];
