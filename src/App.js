@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import ItemPage from "./pages/ItemPage";
 import Layout from "./pages/Layout";
 import Store from "./pages/Store";
 
@@ -15,7 +16,7 @@ const App = () => {
       <Route path={"/"} element={<Layout />}>
         <Route index element={<Home />} />
         <Route path={"/store"} element={<Store />} />
-        <Route path={"/store/:itemId"} element={"StoreItem"} />
+        <Route path={"/store/:itemId"} element={<ItemPage />} />
         <Route path={"/about"} element={<About />} />
         <Route path={"/cart"} element={"cart"} />
         <Route path={"*"} element={"Error"} />
