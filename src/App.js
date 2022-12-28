@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
@@ -10,9 +9,6 @@ import Layout from "./pages/Layout";
 import Store from "./pages/Store";
 
 const App = () => {
-  const cart = useSelector((state) => state.cart);
-  console.log(cart);
-
   return (
     <Routes>
       <Route path={"/"} element={<Layout />}>
