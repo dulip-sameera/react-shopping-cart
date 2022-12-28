@@ -8,8 +8,8 @@ import img4 from "./4.jpg";
 import img4BG from "./4_BG.jpg";
 import img5 from "./5.jpg";
 import img5BG from "./5_BG.jpg";
-import img6 from "./5.jpg";
-import img6BG from "./5_BG.jpg";
+import img6 from "./6.jpg";
+import img6BG from "./6_BG.jpg";
 import BG from "./BG.jpg";
 import cartBG from "./cartBG.jpg";
 
