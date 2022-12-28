@@ -4,16 +4,18 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
 import { BsCartFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [mobileNav, setMobileNav] = useState(false);
+  const cartItemQty = useSelector((state) => state.cart.totalQty);
 
   const handleMobileNav = () => {
     setMobileNav(!mobileNav);
   };
 
   return (
-    <header className="container mx-auto p-4 flex justify-between items-center ">
+    <header className="container mx-auto p-4 flex justify-between items-center  ">
       <div>
         <Link
           className="text-customCyan text-3xl hover:text-customDarkCyan font-bold"
@@ -24,7 +26,7 @@ const Header = () => {
       </div>
 
       {/* Desktop view */}
-      <nav className="text-customCyan gap-10 text-xl hidden md:flex">
+      <nav className="text-customCyan gap-10 text-xl hidden md:flex ">
         <NavLink
           to={"/"}
           className={({ isActive }) =>
@@ -64,14 +66,14 @@ const Header = () => {
               <div className="relative">
                 <BsCartFill size={30} />
                 <div className="absolute -top-1 -right-1 bg-red-400 rounded-full px-1 text-sm text-center">
-                  6
+                  {cartItemQty}
                 </div>
               </div>
             ) : (
               <div className="relative">
                 <BsCart size={30} />
                 <div className="absolute -top-1 -right-1 bg-red-400 rounded-full px-1 text-center  text-sm">
-                  6
+                  {cartItemQty}
                 </div>
               </div>
             )
@@ -143,11 +145,11 @@ const Header = () => {
             {({ isActive }) =>
               isActive ? (
                 <div className="flex justify-between items-center px-2">
-                  <BsCartFill size={20} /> 6
+                  <BsCartFill size={20} /> {cartItemQty}
                 </div>
               ) : (
                 <div className="flex justify-between items-center px-2">
-                  <BsCart size={20} /> 6
+                  <BsCart size={20} /> {cartItemQty}
                 </div>
               )
             }
