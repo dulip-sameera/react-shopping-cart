@@ -65,14 +65,22 @@ const Header = () => {
             isActive ? (
               <div className="relative">
                 <BsCartFill size={30} />
-                <div className="absolute -top-1 -right-1 bg-red-400 rounded-full px-1 text-sm text-center">
+                <div
+                  className={`absolute -top-1 -right-1 bg-red-400 rounded-full px-1 text-sm text-center ${
+                    cartItemQty === 0 ? "hidden" : ""
+                  }`}
+                >
                   {cartItemQty}
                 </div>
               </div>
             ) : (
               <div className="relative">
                 <BsCart size={30} />
-                <div className="absolute -top-1 -right-1 bg-red-400 rounded-full px-1 text-center  text-sm">
+                <div
+                  className={`absolute -top-1 -right-1 bg-red-400 rounded-full px-1 text-center  text-sm ${
+                    cartItemQty === 0 ? "hidden" : ""
+                  }`}
+                >
                   {cartItemQty}
                 </div>
               </div>
@@ -86,15 +94,24 @@ const Header = () => {
         {mobileNav ? (
           <AiOutlineClose size={20} className="text-customCyan" />
         ) : (
-          <RxHamburgerMenu size={20} className="text-customCyan" />
+          <div className="relative">
+            <div
+              className={`text-sm text-customCyan absolute -top-2.5 -right-1.5 bg-red-400 rounded-full px-1 ${
+                cartItemQty === 0 ? "hidden" : ""
+              } `}
+            >
+              {cartItemQty}
+            </div>
+            <RxHamburgerMenu size={20} className="text-customCyan" />
+          </div>
         )}
       </div>
 
       <div
         className={
           mobileNav
-            ? "fixed left-0 top-0 w-[60%] h-full bg-customBlack ease-in-out duration-500 border-r-2 border-r-customDarkCyan md:hidden"
-            : " fixed left-[-100%] top-0 w-[60%] h-full bg-customBlack ease-in-out duration-500 border-r-2 border-r-customDarkCyan md:hidden"
+            ? "fixed left-0 top-0 w-[60%] h-full bg-customBlack ease-in-out duration-500 border-r-2 z-50 border-r-customDarkCyan md:hidden"
+            : " fixed left-[-100%] top-0 w-[60%] h-full bg-customBlack ease-in-out duration-500 border-r-2 border-r-customDarkCyan md:hidden z-50"
         }
       >
         <div className="p-4">
